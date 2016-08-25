@@ -1,83 +1,33 @@
-# app.rb
 require 'sinatra'
+require './ticket'
+require './film'
+require './list'
+require './routes'
 
-class Movie
-	attr_reader :movie_id, :title, :price
-	def initialize(title, price)
-		@movie_list != nil ? @movie_id = @movie_list.size : @movie_id = 0
-		@title = title
-		@price = price
-	end
+tickets = List.new
+films = List.new
+
+def add_film_to_list(title, price)
+	@films = films
+	film_id = @films.get_next_id
+	@films.add(Film.new(film_id, title, price))
 end
 
-class Ticket
-	attr_reader :ticket_id, :name, :phone, :mail, :movie_id
-	def initialize (movie_id, name, mail, phone)
-		@ticket_list != nil ? @ticket_id = @ticket_list.size : @ticket_id = 0
-		@movie_id = movie_id
-		@name = name
-		@phone = phone
-		@mail = mail
-	end
+def create_ticket_and_add_to_list(name, mail, phone, film_id)
+	@tickets = tickets
+	ticket_id = @tickets.get_next_id
+	@tickets.add(Ticket.new(ticket_id, name, mail, phone, film_id))
+	ticket_id
 end
 
-class Cinema
-	attr_accessor :ticket_list, :movie_list
-	def initialize
-		@movie_list = []
-		@ticket_list = []
-		m1 = Movie.new('Pets',4)
-		@movie_list.push(m1)
-		m2 = Movie.new('Suicide Squad',7)
-		@movie_list.push(m2)
-		m3 = Movie.new('Now You see me 2',4)
-		@movie_list.push(m3)
-		m4 = Movie.new('Tarzan',4)
-		@movie_list.push(m4)
-	end
-
-	def create_new_movie(title, price)
-		add_movie_to_list(Movie.new(title, price))
-	end
-
-	def add_movie_to_list(movie)
-		@movie_list.push(movie)
-	end
-
-	def add_ticket_to_list(ticket)
-		@ticket_list.push(ticket)
-	end
-
-	def get_ticket_from_list(ticket_id)
-		@ticket_list[ticket_id]
-	end
-
-	def get_movie_from_list(movie_id)
-		#@movie_list[movie_id]
-	end
-	def get_last_ticket
-	end
+def get_data_from_ticket_by_ticket_id(id)
 end
 
-cinema = Cinema.new
+add_film_to_list('Pets',3)
+add_film_to_list('Suicide Squad',5)
+add_film_to_list('Now You see me 2',5)
+add_film_to_list('Tarzan',4)
 
-
-get "/" do
-  "hello world"
-end
-
-get "/new" do
-	@cinema_v = cinema
-	erb :form
-end
-
-post '/create' do
-	ticket = Ticket.new(params[:movie_id].to_i,	params[:name],	params[:mail], params[:phone])
-	cinema.add_ticket_to_list(ticket)
-	@ticket = cinema.get_ticket_from_list(ticket.ticket_id)
-	@movie_list = cinema.movie_list
-	erb :ticket_data
-end
 
 
 

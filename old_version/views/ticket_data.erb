@@ -1,0 +1,7 @@
+<h1>Datos del ticket</h1>
+<p>Ticket:<span> #<%=@ticket.ticket_id %></span></p>
+<p>Nombre:<span> <%=@ticket.name %></span></p>
+<p>Correo:<span> <%=@ticket.mail %></span></p>
+<p>Telefono:<span> <%=@ticket.phone %></span></p>
+<p>Pelicula:<span> <%=@movie_list[@ticket.movie_id].title %></span></p>
+<p>Precio:<span> <%=@movie_list[@ticket.movie_id].price %>€</span></p>
