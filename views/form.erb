@@ -2,9 +2,11 @@
   <p>Your Name: <input type="text" name="name"></p>
   <p>Your Mail: <input type="text" name="mail"></p>
   <p>Your Phone: <input type="text" name="phone"></p>
-  <select name = 'movie_id'>
-	  <% @films.each_with_index do |film, id| %>
+
+  <select name = 'film_id'>
+	  <% @films.list.each_with_index do |film, id| %>
 	   	 <option  value="<%= id %>"> <%= film.title %> - <%= film.price %> € </option>
-	  <% end %>  <input type="submit">
+	  <% end %>
+    <input type="submit">
   </select>
 </form>
