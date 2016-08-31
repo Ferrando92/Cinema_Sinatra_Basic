@@ -1,0 +1,1 @@
+-guardar el id de los tickets y films como integer

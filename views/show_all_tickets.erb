@@ -1,0 +1,5 @@
+<%=session[:tickets] %>
+<% @tickets.each do |ticket|%>
+<p><%=ticket.name %></p>
+<p><%=ticket.ticket_id %></p>
+<% end %>

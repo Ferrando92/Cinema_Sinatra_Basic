@@ -14,12 +14,12 @@ class List
     add(Film.new(get_next_id,'Tarzan',4))
   end
 
-  def add(object)
-    @list.push(object)
+  def add(obj)
+    @list << obj
   end
 
   def get_next_id
-    @list.size
+    @list.size-1
   end
 
 

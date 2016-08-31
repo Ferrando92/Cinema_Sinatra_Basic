@@ -5,7 +5,7 @@
 
   <select name = 'film_id'>
 	  <% @films.list.each_with_index do |film, id| %>
-	   	 <option  value="<%= id %>"> <%= film.title %> - <%= film.price %> € </option>
+	   	 <option value="<%= id %>"> <%= film.title %> - <%= film.price %> € </option>
 	  <% end %>
     <input type="submit">
   </select>
