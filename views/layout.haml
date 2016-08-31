@@ -9,16 +9,19 @@
   %body
     #wrapper
       #header
-        %h1 Welcome to Ticket Meistah
-        %h2 The easy way to get a ticket made with Sinatra and HAML!
+        %div{:class => "bg-primary",:style =>"padding: 2em"}
+          %h1 Welcome to Ticket Meistah
+          %h2 The easy way to get a ticket made with Sinatra and HAML!
  
       #content
-        =yield
+        %div{:class => "container center-block" }
+          =yield
  
       #side_bar
         %h1 
         %p
  
       #footer
-        %p
-          This is the footer.
+        %p 
+          %a{ :href => "https://github.com/Ferrando92/Cinema_Sinatra_Basic/tree/master/views", :title => "My GitHub repository " }Creado por Sergio Ferrando - link to my GitHub repository
+          

@@ -19,7 +19,7 @@ class List
   end
 
   def get_next_id
-    @list.size-1
+    @list.size
   end
 
 
