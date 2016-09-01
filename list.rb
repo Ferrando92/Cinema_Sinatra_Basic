@@ -4,7 +4,7 @@ class List
 
   def initialize(type)
     @list = []
-    type === 1 ? initialize_films : true
+    type === 1 ? initialize_films : true #refactor? Crear una clase Films que herede de List
   end
 
   def initialize_films

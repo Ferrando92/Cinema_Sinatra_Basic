@@ -17,8 +17,8 @@ get "/new" do
 end
 
 post '/create' do
-  create_ticket_and_add_to_list(params[:name], params[:mail], params[:phone], params[:film_id])
-  ticket_id = session[:tickets].get_next_id-1
+  ticket_id = create_ticket_and_add_to_list(params[:name], params[:mail], params[:phone], params[:film_id])
+  #ticket_id = session[:tickets].get_next_id-1
   redirect "/show/#{ticket_id}"
   #aqui crearemos el ticket y redigiremos a show/id para evitar creaciones multiples
 end

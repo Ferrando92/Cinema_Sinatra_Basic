@@ -1,5 +1,3 @@
--Poner HAML a la creacion del ticket
--Enviar un correo al crear el ticket
 -Crear usuarios y admin
 -Crear una vista HOME
 
