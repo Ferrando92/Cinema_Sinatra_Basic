@@ -55,14 +55,14 @@ def send_mail(ticket)
     :authentication       => :plain, 
     :domain               => "localhost.localdomain" 
   }})
-  end
+end
 
-  def generate_mail_body(ticket)
-  	message = "Ticket: \t ##{ticket.ticket_id} \n
-  	Name:\t #{ticket.name}\n
-  	Mail:\t #{ticket.mail}\n
-  	Phone:\t #{ticket.phone}\n
-  	Film:\t #{session[:films].list[ticket.film_id.to_i].title}\n
-    Price:\t #{session[:films].list[ticket.film_id.to_i].price}€\n
-  	Enjoy ! ^^"  	
-  end
+def generate_mail_body(ticket)
+	message = "Ticket: \t ##{ticket.ticket_id} \n
+	Name:\t #{ticket.name}\n
+	Mail:\t #{ticket.mail}\n
+	Phone:\t #{ticket.phone}\n
+	Film:\t #{session[:films].list[ticket.film_id.to_i].title}\n
+  Price:\t #{session[:films].list[ticket.film_id.to_i].price}€\n
+	Enjoy ! ^^"  	
+end
