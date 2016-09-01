@@ -13,11 +13,11 @@ end
 
 get "/new" do
   @films = session[:films]
-  erb :form
+  haml :form
 end
 
 post '/create' do
-  ticket_id = create_ticket_and_add_to_list(params[:name], params[:mail], params[:phone], params[:film_id])
+  ticket_id = generate_ticket_and_get_ticket_id(params[:name], params[:mail], params[:phone], params[:film_id])
   #ticket_id = session[:tickets].get_next_id-1
   redirect "/show/#{ticket_id}"
   #aqui crearemos el ticket y redigiremos a show/id para evitar creaciones multiples

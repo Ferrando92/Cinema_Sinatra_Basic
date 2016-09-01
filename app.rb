@@ -22,10 +22,14 @@ def add_film_to_list(title, price) #Aun no se usa, destinado a admin
   films.add(Film.new(film_id, title, price))
 end
 
-def create_ticket_and_add_to_list(name, mail, phone, film_id)
+def add_ticket_to_list(ticket)
+  session[:tickets].add(ticket)
+end
+
+def generate_ticket_and_get_ticket_id(name, mail, phone, film_id)
   ticket_id = session[:tickets].get_next_id
   ticket = Ticket.new(ticket_id, film_id, name, mail, phone)
-  session[:tickets].add(ticket)
+  add_ticket_to_list(ticket)
   send_mail(ticket)
   ticket_id
 end

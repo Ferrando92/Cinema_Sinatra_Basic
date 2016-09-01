@@ -1,20 +1,20 @@
 %div{:class => "col-md-12" ,:style =>"padding: 2em"}
   -@tickets.each do |ticket|
     %h2
-      ="Ticket #"
+      Ticket #
       =ticket.ticket_id
     %p
-      ="Name: #{ticket.name}"
+      ="Name: #{ticket.name}" #probablemente mejor forma de hacerlo
     %p
-      ="Email: "
+      Email:
       =ticket.mail
     %p
-      ="Phone: "
+      Phone:
       =ticket.phone
     %p
-      ="Film: "
+      Film: "
       =@films[ticket.film_id.to_i].title 
     %p
-      ='Price: '
+      Price:
       =@films[ticket.film_id.to_i].price
     %hr

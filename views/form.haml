@@ -1,4 +1,4 @@
-%form{  :action => 'create', :method => 'post' }
+%form{:action => 'create', :method => 'post' }
   %p Your Name: 
   %input{:name => 'name'}
   %p Your Mail: 
@@ -6,10 +6,8 @@
   %p Your Phone: 
   %input{:name => 'phone'}
   %select{:name => 'film_id'}
-    @films.list.each_with_index do |film, id| 
-      %option{:value => =id} 
-	      =film.title 
-	      ='-' 
-	      =film.price
+    -@films.list.each_with_index do |film, id|
+      %option{:value => id} 
+        ="#{film.title} - #{film.price}"
   %input{ :type => "submit"}
   
