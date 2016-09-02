@@ -15,6 +15,8 @@ end
 before do
   if(!session[:films]) then session[:films] = List.new(1) end# type 1 = films
   if(!session[:tickets]) then session[:tickets] = List.new(2) end# type 2 = tickets
+  #Descomentar si se aplica herencia en Films
+  #if(!session[:films]) then session[:films] = Films.new end
 end
 
 def add_film_to_list(title, price) #Aun no se usa, destinado a admin
@@ -27,7 +29,7 @@ def add_ticket_to_list(ticket)
 end
 
 def generate_ticket_and_get_ticket_id(name, mail, phone, film_id)
-  ticket_id = session[:tickets].get_next_id
+  ticket_id = session[:tickets].get_next_id 
   ticket = Ticket.new(ticket_id, film_id, name, mail, phone)
   add_ticket_to_list(ticket)
   send_mail(ticket)

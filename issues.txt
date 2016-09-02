@@ -1,3 +1,4 @@
 -Crear usuarios y admin
 -Crear una vista HOME
 -Hay forma de reutilizar la vista de show ticket en el show all
+-Se puede utilizar Films para que herede de List, solo hay un metodo que los diferencia
