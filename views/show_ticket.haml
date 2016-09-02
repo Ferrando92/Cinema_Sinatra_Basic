@@ -1,19 +1,13 @@
 %div{:class => "container" ,:style =>"padding: 2em"}
   %h2
-    Ticket #
-    =@ticket.ticket_id
+   ="Ticket ##{@ticket.ticket_id}" 
   %p
-    Name:
-    =@ticket.name
+   ="Name: #{@ticket.name}" 
   %p
-    Email: 
-    =@ticket.mail
+    ="Email: #{@ticket.mail}"
   %p
-    Phone:
-    =@ticket.phone
+    ="Phone: #{@ticket.phone}"
   %p
-    Film:
-    =@film.title 
+    ="Pelicula: #{@film.title}"
   %p
-    Price:
-    =@film.price
+    ="Price: #{@film.price}"

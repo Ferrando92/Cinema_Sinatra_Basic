@@ -5,9 +5,10 @@
   %input{:name => 'mail'}
   %p Your Phone: 
   %input{:name => 'phone'}
-  %select{:name => 'film_id'}
-    -@films.list.each_with_index do |film, id|
-      %option{:value => id} 
-        ="#{film.title} - #{film.price}"
-  %input{ :type => "submit"}
+    %p Choose the Film
+    %select{:name => 'film_id'}
+      -@films.list.each_with_index do |film, id|
+        %option{:value => id} 
+          ="#{film.title} - #{film.price}"
+  %input{:type => "submit"}
   

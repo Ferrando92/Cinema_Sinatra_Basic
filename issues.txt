@@ -1,3 +1,3 @@
 -Crear usuarios y admin
 -Crear una vista HOME
-
+-Hay forma de reutilizar la vista de show ticket en el show all
