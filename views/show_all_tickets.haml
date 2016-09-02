@@ -1,7 +1,8 @@
 %div{:class => "col-md-12" ,:style =>"padding: 2em"}
   -@tickets.each do |ticket|
     %h2
-      ="Ticket ##{ticket.ticket_id}" 
+      %a{:href => "/show/#{ticket.ticket_id}"}
+        ="Ticket ##{ticket.ticket_id}" 
     %p
       ="Name: #{ticket.name}" 
     %p

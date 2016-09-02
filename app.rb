@@ -32,7 +32,7 @@ def generate_ticket_and_get_ticket_id(name, mail, phone, film_id)
   ticket_id = session[:tickets].get_next_id 
   ticket = Ticket.new(ticket_id, film_id, name, mail, phone)
   add_ticket_to_list(ticket)
-  send_mail(ticket)
+  #send_mail(ticket)
   ticket_id
 end
 
